@@ -1,12 +1,19 @@
-import Movie from "../model/sessions.model";
+import Sessions from "../model/sessions.model";
 import { Request, Response } from "express";
 
-const create = (req: Request, res: Response) => {
-    res.json({ status: true });
+const create = async (req: Request, res: Response) => {
+
+    const result = await Sessions.create({});
+
+    res.json({ status: true, result });
 };
 
-const getAll = (req: Request, res: Response) => {
-    res.json({ status: true });
+const getAll = async (req: Request, res: Response) => {
+
+    const result = await Sessions.find({}).limit(1);
+
+    res.json({ status: true, result });
+
 };
 
 export { create, getAll };

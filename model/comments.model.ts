@@ -4,14 +4,14 @@ interface IComments {
     name: string;
     email: string;
     text: string;
-    date: Date;   
+    date: Date;
 }
 
 const commentsSchema = new Schema<IComments>({
     name: String,
     email: String,
     text: String,
-    date: Date, 
+    date: Date,
 });
 
 const Comments = model<IComments>("comments", commentsSchema);

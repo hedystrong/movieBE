@@ -9,14 +9,14 @@ interface IMovie {
     poster: string;
     title: string;
     fullplot: string;
-    countries:[string];
+    countries: [string];
     released: Date;
     directors: [string];
     writers: [string];
     awards: {
         wins: number;
         nominations: number;
-        text: string;      
+        text: string;
     }
     lastupdated: Date;
     year: number;
@@ -26,7 +26,7 @@ interface IMovie {
         id: number;
     }
     type: string;
-    tomatoes:{
+    tomatoes: {
         viewer: {
             rating: number;
             numReviews: number;
@@ -53,14 +53,14 @@ const movieSchema = new Schema<IMovie>({
     poster: String,
     title: String,
     fullplot: String,
-    countries:[String],
+    countries: [String],
     released: Date,
     directors: [String],
     writers: [String],
     awards: {
         wins: Number,
         nominations: Number,
-        text: String,      
+        text: String,
     },
     lastupdated: Date,
     year: Number,
@@ -70,7 +70,7 @@ const movieSchema = new Schema<IMovie>({
         id: Number,
     },
     type: String,
-    tomatoes:{
+    tomatoes: {
         viewer: {
             rating: Number,
             numReviews: Number,
