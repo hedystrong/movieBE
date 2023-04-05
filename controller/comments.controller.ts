@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import Comments from "../model/comments.model";
 
 const create = async (req: Request, res: Response) => {
-    const result = await Comments.create({});
+    const result = await Comments.create(req.body);
     res.json({ status: true, result });
 };
 

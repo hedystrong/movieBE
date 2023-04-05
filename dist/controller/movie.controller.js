@@ -15,12 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAll = exports.create = void 0;
 const movie_model_1 = __importDefault(require("../model/movie.model"));
 const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield movie_model_1.default.create({});
+    const result = yield movie_model_1.default.create(req.body);
     res.json({ status: true, result });
 });
 exports.create = create;
 const getAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield movie_model_1.default.find({}).limit(1);
+    const result = yield movie_model_1.default.find({}).limit(30);
     res.json({ status: true, result });
 });
 exports.getAll = getAll;

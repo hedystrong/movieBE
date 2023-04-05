@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAll = exports.create = void 0;
 const sessions_model_1 = __importDefault(require("../model/sessions.model"));
 const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield sessions_model_1.default.create({});
+    const result = yield sessions_model_1.default.create(req.body);
     res.json({ status: true, result });
 });
 exports.create = create;

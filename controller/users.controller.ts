@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 
 const create = async (req: Request, res: Response) => {
 
-    const result = await Users.create({});
+    const result = await Users.create(req.body);
 
     res.json({ status: true, result });
 };

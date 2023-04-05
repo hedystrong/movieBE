@@ -3,6 +3,12 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import movieRoute from "./routes/movie.routes";
 import cors from "cors";
+import commentsRoute from "./routes/comments.routes";
+import theatersRoute from "./routes/theaters.routes";
+import sessionsRoute from "./routes/sessions.routes";
+import usersRoute from "./routes/users.routes";
+
+
 
 dotenv.config();
 
@@ -19,6 +25,12 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api", movieRoute);
+app.use("/api", commentsRoute);
+app.use("/api", theatersRoute);
+app.use("/api", sessionsRoute);
+app.use("/api", usersRoute);
+
+
 
 app.get("/api", (req: Request, res: Response) => {
     res.send("Express + TypeScript Server");

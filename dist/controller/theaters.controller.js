@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAll = exports.create = void 0;
 const theaters_model_1 = __importDefault(require("../model/theaters.model"));
 const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield theaters_model_1.default.create({});
+    const result = yield theaters_model_1.default.create(req.body);
     res.json({ status: true, result });
 });
 exports.create = create;

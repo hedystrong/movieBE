@@ -4,7 +4,7 @@ import Theaters from "../model/theaters.model";
 
 const create = async (req: Request, res: Response) => {
 
-    const result = await Theaters.create({});
+    const result = await Theaters.create(req.body);
 
     res.json({ status: true, result });
 };

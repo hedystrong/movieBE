@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 
 const create = async (req: Request, res: Response) => {
 
-    const result = await Sessions.create({});
+    const result = await Sessions.create(req.body);
 
     res.json({ status: true, result });
 };
