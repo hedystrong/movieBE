@@ -43,5 +43,10 @@ const movieSchema = new mongoose_1.Schema({
         lastUpdated: Date
     }
 });
+movieSchema.virtual("theaterInfo", {
+    ref: "theaters",
+    localField: "theaterId",
+    foreignField: "theaterId", // is equal to `foreignField`
+});
 const Movie = (0, mongoose_1.model)("movies", movieSchema);
 exports.default = Movie;

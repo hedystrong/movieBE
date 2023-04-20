@@ -1,9 +1,12 @@
-import { create, getAll } from "../controller/movie.controller";
+import { getOne, getAll, searchTextBy } from "../controller/movie.controller";
 
 import { Router } from "express";
 
-const route = Router();
+const movieRoute = Router();
 
-route.get("/movie", getAll).post("/movie", create);
+movieRoute
+    .post("/movie", getAll)
+    .get("/movie/:_id", getOne)
+    .post("/movie/search", searchTextBy);
 
-export default route;
+export default movieRoute;

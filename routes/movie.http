@@ -1,9 +1,18 @@
 ###
-GET http://localhost:9000/api/movie
+POST  http://localhost:7000/api/movie
+Content-Type: application/json
+
+{
+  "pageSize":1,
+  "filter":{
+    "searchText":"Museum",
+    "rated":""
+  }
+}
 
 
 ###
-POST http://localhost:9000/api/movie
+POST http://localhost:7000/api/movie
 Content-Type: application/json
 
 {

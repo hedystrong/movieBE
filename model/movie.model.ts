@@ -87,6 +87,12 @@ const movieSchema = new Schema<IMovie>({
     }
 });
 
+movieSchema.virtual("theaterInfo", {
+    ref: "theaters", // The model to use
+    localField: "theaterId", // Find people where `localField`
+    foreignField: "theaterId", // is equal to `foreignField`
+});
+
 const Movie = model<IMovie>("movies", movieSchema);
 
 export default Movie;
